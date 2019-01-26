@@ -11,20 +11,18 @@ public class ControlCameraV2 {
     int frictionForceX = 0;
     int frictionForceY = 0;
     public ControlCameraV2(PerspectiveCamera camera){ourcamera = camera;}
-    public void speedX(int acceleration){ accelerationX = acceleration; speedSynchronizationX();}
-    public void speedY(int acceleration){accelerationY = acceleration;speedSynchronizationY();}
+    public void speedX(int acceleration){ accelerationX = acceleration;}
+    public void speedY(int acceleration){accelerationY = acceleration;}
     public void brakingX(){accelerationX = 0;}
     public void brakingY(){accelerationY = 0;}
-    public void speedSynchronizationX(){if(speedY != 0) speedX = speedY;}
-    public void speedSynchronizationY(){if(speedX != 0) speedY = speedX;}
     public void Demonstration(){
         if(speedX > 0) frictionForceX = -1;
         if(speedX < 0) frictionForceX = 1;
         if (speedY > 0) frictionForceY = -1;
         if (speedY < 0) frictionForceY = 1;
         if (speedY == 0) frictionForceY = 0;
-        if(speedX < 12 && speedX > -12){speedX = speedX + accelerationX;}
-        if(speedY < 12 && speedY > -12){speedY = speedY + accelerationY;}
+        if(speedX < 14 && speedX > -14){speedX = speedX + accelerationX;}
+        if(speedY < 14 && speedY > -14){speedY = speedY + accelerationY;}
         speedX = speedX + frictionForceX;
         speedY = speedY + frictionForceY;
         if (speedX == 0) frictionForceX = 0;
