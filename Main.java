@@ -50,9 +50,7 @@ public class Main extends Application {
         ourscene.setOnKeyReleased(e -> {
             if(e.getCode() == KeyCode.UP || e.getCode() == KeyCode.DOWN){ ourcontrol.brakingY(); codes.remove(KeyCode.UP); codes.remove(KeyCode.DOWN);}
             if(e.getCode() == KeyCode.RIGHT || e.getCode() == KeyCode.LEFT){ ourcontrol.brakingX();codes.remove(KeyCode.RIGHT);codes.remove(KeyCode.LEFT);}
-           // if(e.getCode() == KeyCode.LEFT){ ourcontrol.brakingX();codes.remove(KeyCode.LEFT);
-           // }
-            }); // очищаем коллекцию, когда отпускаем кнопку
+            });
 
         ourscene.setOnKeyPressed(e -> {
             if(acceptedKey.contains(e.getCode()))
